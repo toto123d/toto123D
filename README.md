@@ -1,10 +1,8 @@
 # Hi there 👋
 
-# ID:YUHUNG_LIANG
-
-# EMAIL:alan1995224@gmail.com
-
-# GitHubID :toto123d
+# Name : YUHUNG_LIANG
+# email : alan1995224@gmail.com
+# GitHub username: toto123d
 
 # I am currently using JAVA, but I am currently learning C# and C++. Currently I am looking for some projects online to train my programming skills, and I am starting to apply for some companies, hoping to find a job before I graduate.
 
