@@ -1,0 +1,98 @@
+[33mtag UEP-M4-T2[m
+Tagger: YUHUNG_LIANG <alan1995224@gmail.com>
+Date:   Fri Sep 6 00:53:47 2024 -0500
+
+Completed Tutorial 2
+
+[33mcommit f7006bba92b1345d57e98b6a191ddd5a41356f42[m[33m ([m[1;33mtag: [m[1;33mUEP-M4-T2[m[33m)[m
+Author: YUHUNG_LIANG <alan1995224@gmail.com>
+Date:   Fri Sep 6 00:53:03 2024 -0500
+
+    Add rotating collectible for UEP-M4-T2
+
+[1mdiff --git a/UEP-M4-T2/Assets/Rotator.cs b/UEP-M4-T2/Assets/Rotator.cs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f9c20c6[m
+[1m--- /dev/null[m
+[1m+++ b/UEP-M4-T2/Assets/Rotator.cs[m
+[36m@@ -0,0 +1,12 @@[m
+[32m+[m[32musing UnityEngine;[m
+[32m+[m
+[32m+[m[32mpublic class Rotator : MonoBehaviour[m
+[32m+[m[32m{[m
+[32m+[m[32m    public float rotationSpeed = 80.0f; // 旋轉速度變量[m
+[32m+[m
+[32m+[m[32m    void Update()[m
+[32m+[m[32m    {[m
+[32m+[m[32m        // 讓物體在 Y 軸上旋轉[m
+[32m+[m[32m        transform.Rotate(new Vector3(0, rotationSpeed * Time.deltaTime, 0));[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/UEP-M4-T2/Assets/Rotator.cs.meta b/UEP-M4-T2/Assets/Rotator.cs.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..983434f[m
+[1m--- /dev/null[m
+[1m+++ b/UEP-M4-T2/Assets/Rotator.cs.meta[m
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: df0b5d920a6342e4c94ac229d4efda0a[m
+\ No newline at end of file[m
+[1mdiff --git a/UEP-M4-T2/Assets/Scenes.meta b/UEP-M4-T2/Assets/Scenes.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..28c3f06[m
+[1m--- /dev/null[m
+[1m+++ b/UEP-M4-T2/Assets/Scenes.meta[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: 9452a6289ff9160408ce60b65c1d5de2[m
+[32m+[m[32mfolderAsset: yes[m
+[32m+[m[32mDefaultImporter:[m
+[32m+[m[32m  externalObjects: {}[m
+[32m+[m[32m  userData:[m[41m [m
+[32m+[m[32m  assetBundleName:[m[41m [m
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+[1mdiff --git a/UEP-M4-T2/Assets/Scenes/SampleScene.unity b/UEP-M4-T2/Assets/Scenes/SampleScene.unity[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2f519e9[m
+[1m--- /dev/null[m
+[1m+++ b/UEP-M4-T2/Assets/Scenes/SampleScene.unity[m
+[36m@@ -0,0 +1,434 @@[m
+[32m+[m[32m%YAML 1.1[m
+[32m+[m[32m%TAG !u! tag:unity3d.com,2011:[m
+[32m+[m[32m--- !u!29 &1[m
+[32m+[m[32mOcclusionCullingSettings:[m
+[32m+[m[32m  m_ObjectHideFlags: 0[m
+[32m+[m[32m  serializedVersion: 2[m
+[32m+[m[32m  m_OcclusionBakeSettings:[m
+[32m+[m[32m    smallestOccluder: 5[m
+[32m+[m[32m    smallestHole: 0.25[m
+[32m+[m[32m    backfaceThreshold: 100[m
+[32m+[m[32m  m_SceneGUID: 00000000000000000000000000000000[m
+[32m+[m[32m  m_OcclusionCullingData: {fileID: 0}[m
+[32m+[m[32m--- !u!104 &2[m
+[32m+[m[32mRenderSettings:[m
+[32m+[m[32m  m_ObjectHideFlags: 0[m
+[32m+[m[32m  serializedVersion: 10[m
+[32m+[m[32m  m_Fog: 0[m
+[32m+[m[32m  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}[m
+[32m+[m[32m  m_FogMode: 3[m
+[32m+[m[32m  m_FogDensity: 0.01[m
+[32m+[m[32m  m_LinearFogStart: 0[m
+[32m+[m[32m  m_LinearFogEnd: 300[m
+[32m+[m[32m  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}[m
+[32m+[m[32m  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}[m
+[32m+[m[32m  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}[m
+[32m+[m[32m  m_AmbientIntensity: 1[m
+[32m+[m[32m  m_AmbientMode: 0[m
+[32m+[m[32m  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}[m
+[32m+[m[32m  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}[m
+[32m+[m[32m  m_HaloStrength: 0.5[m
+[32m+[m[32m  m_FlareStrength: 1[m
+[32m+[m[32m  m_FlareFadeSpeed: 3[m
+[32m+[m[32m  m_HaloTexture: {fileID: 0}[m
+[32m+[m[32m  m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}[m
+[32m+[m[32m  m_DefaultReflectionMode: 0[m
+[32m+[m[32m  m_DefaultReflectionResolution: 128[m
+[32m+[m[32m  m_ReflectionBounces: 1[m
+[32m+[m[32m  m_ReflectionIntensity: 1[m
+[32m+[m[32m  m_CustomRef
